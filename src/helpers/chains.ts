@@ -14,8 +14,8 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "Ethereum Mainnet",
@@ -30,9 +30,9 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
+      balance: "",
     },
-    explorer: "https://etherscan.io/"
+    explorer: "https://etherscan.io/",
   },
   {
     name: "Ethereum Ropsten",
@@ -47,9 +47,9 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
+      balance: "",
     },
-    explorer: "https://ropsten.etherscan.io/"
+    explorer: "https://ropsten.etherscan.io/",
   },
   {
     name: "Ethereum Rinkeby",
@@ -64,9 +64,9 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
+      balance: "",
     },
-    explorer: "https://rinkeby.etherscan.io/"
+    explorer: "https://rinkeby.etherscan.io/",
   },
   {
     name: "Ethereum Görli",
@@ -81,8 +81,8 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "RSK Mainnet",
@@ -97,8 +97,8 @@ const supportedChains: IChainData[] = [
       name: "RSK",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "Ethereum Kovan",
@@ -113,9 +113,9 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
+      balance: "",
     },
-    explorer: "https://kovan.etherscan.io/"
+    explorer: "https://kovan.etherscan.io/",
   },
   {
     name: "Ethereum Classic Mainnet",
@@ -130,8 +130,8 @@ const supportedChains: IChainData[] = [
       name: "Ethereum",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "POA Network Sokol",
@@ -146,8 +146,8 @@ const supportedChains: IChainData[] = [
       name: "POA",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "POA Network Core",
@@ -162,8 +162,8 @@ const supportedChains: IChainData[] = [
       name: "POA",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "xDAI Chain",
@@ -178,8 +178,8 @@ const supportedChains: IChainData[] = [
       name: "xDAI",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "Callisto Mainnet",
@@ -194,8 +194,8 @@ const supportedChains: IChainData[] = [
       name: "CLO",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "Binance Smart Chain",
@@ -210,8 +210,8 @@ const supportedChains: IChainData[] = [
       name: "BNB",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
+      balance: "",
+    },
   },
   {
     name: "Polygon",
@@ -220,15 +220,15 @@ const supportedChains: IChainData[] = [
     network: "mainnet",
     chain_id: 137,
     network_id: 137,
-    rpc_url: "https://polygon-mainnet.public.blastapi.io/",
+    rpc_url: "https://polygon-mainnet.infura.io/v3/%API_KEY%",
     native_currency: {
       symbol: "MATIC",
       name: "MATIC",
       decimals: "18",
       contractAddress: "",
-      balance: ""
-    }
-  }
+      balance: "",
+    },
+  },
 ];
 
 export default supportedChains;
