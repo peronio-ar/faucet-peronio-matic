@@ -27,3 +27,5 @@ yarn.lock
 report.*
 
 /.idea
+# Local Netlify folder
+.netlify
