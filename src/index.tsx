@@ -1,9 +1,12 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+// import * as ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 
 import App from "./App";
 import { globalStyle } from "./styles";
+
+import { createRoot } from "react-dom/client";
+
 const GlobalStyle = createGlobalStyle`
   ${globalStyle}
 `;
@@ -21,10 +24,10 @@ declare global {
   }
 }
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root")!);
+root.render(
   <>
     <GlobalStyle />
     <App />
-  </>,
-  document.getElementById("root")
+  </>
 );
