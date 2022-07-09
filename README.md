@@ -18,7 +18,15 @@ npm install
 yarn
 ```
 
-2. Start the app
+2. Copy .env example
+
+```bash
+cp .env.example .env
+```
+
+Set REACT_APP_INFURA_ID with your Infura Project ID
+
+3. Start the app
 
 ```bash
 npm run start
@@ -27,4 +35,3 @@ npm run start
 
 yarn start
 ```
-
