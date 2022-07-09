@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Web3Provider } from "@ethersproject/providers";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
 interface IMainProps {
   account: string;

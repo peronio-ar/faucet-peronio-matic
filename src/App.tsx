@@ -71,7 +71,7 @@ const INITIAL_STATE: IAppState = {
   pendingRequest: false,
   result: null,
   electionContract: null,
-  info: null
+  info: null,
 };
 
 class App extends React.Component<any, any> {
@@ -83,13 +83,13 @@ class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      ...INITIAL_STATE
+      ...INITIAL_STATE,
     };
 
     this.web3Modal = new Web3Modal({
       network: this.getNetwork(),
       cacheProvider: true,
-      providerOptions: this.getProviderOptions()
+      providerOptions: this.getProviderOptions(),
     });
   }
 
@@ -114,7 +114,7 @@ class App extends React.Component<any, any> {
       library,
       chainId: network.chainId,
       address,
-      connected: true
+      connected: true,
     });
 
     await this.subscribeToProviderEvents(this.provider);
@@ -134,7 +134,7 @@ class App extends React.Component<any, any> {
 
   public async unSubscribe(provider: any) {
     // Workaround for metamask widget > 9.0.3 (provider.off is undefined);
-    window.location.reload(false);
+    window.location.reload();
     if (!provider.off) {
       return;
     }
@@ -171,9 +171,9 @@ class App extends React.Component<any, any> {
       walletconnect: {
         package: WalletConnectProvider,
         options: {
-          infuraId: process.env.REACT_APP_INFURA_ID
-        }
-      }
+          infuraId: process.env.REACT_APP_INFURA_ID,
+        },
+      },
     };
     return providerOptions;
   };
