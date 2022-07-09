@@ -67,7 +67,7 @@ const INITIAL_STATE: IAppState = {
   address: "",
   library: null,
   connected: false,
-  chainId: 1,
+  chainId: 137,
   pendingRequest: false,
   result: null,
   electionContract: null,
@@ -171,7 +171,13 @@ class App extends React.Component<any, any> {
       walletconnect: {
         package: WalletConnectProvider,
         options: {
-          infuraId: process.env.REACT_APP_INFURA_ID,
+          chainId: 137,
+          network: "matic",
+          rpc: {
+            137:
+              "https://polygon-mainnet.infura.io/v3/" +
+              process.env.REACT_APP_INFURA_ID,
+          },
         },
       },
     };

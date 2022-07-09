@@ -217,7 +217,7 @@ const supportedChains: IChainData[] = [
     name: "Polygon",
     short_name: "plg",
     chain: "polygon",
-    network: "mainnet",
+    network: "matic",
     chain_id: 137,
     network_id: 137,
     rpc_url: "https://polygon-mainnet.infura.io/v3/%API_KEY%",
