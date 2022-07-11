@@ -14,6 +14,9 @@ import Main from "./components/Main";
 
 import { Web3Provider } from "@ethersproject/providers";
 import { getChainData } from "./helpers/utilities";
+import Footer from "./components/Footer";
+
+// import { ChakraProvider } from "@chakra-ui/react";
 
 const SLayout = styled.div`
   position: relative;
@@ -221,6 +224,7 @@ class App extends React.Component<any, any> {
               </SLanding>
             )}
           </SContent>
+          <Footer />
         </Column>
       </SLayout>
     );
