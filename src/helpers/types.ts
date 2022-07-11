@@ -17,3 +17,13 @@ export interface IChainData {
   native_currency: IAssetData;
   explorer?: string;
 }
+
+export interface ISymbol {
+  label: string;
+  url: string;
+}
+
+export interface ITokenAmount {
+  symbol: ISymbol;
+  amount: number;
+}
