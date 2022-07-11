@@ -12,9 +12,9 @@ interface IMainProps {
 const Main = (props: IMainProps) => {
   return (
     <div>
-      <h1>Hola Chicos</h1>
+      <h1>Peronio</h1>
       <div>
-        <div>Address: {props.account}</div>
+        <div>Tu dirección: {props.account}</div>
       </div>
     </div>
   );
