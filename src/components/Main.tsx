@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Web3Provider } from "@ethersproject/providers";
+import Balance from "./widgets/Balance";
 
 // import styled from "styled-components";
 
@@ -16,6 +17,7 @@ const Main = (props: IMainProps) => {
       <div>
         <div>Tu dirección: {props.account}</div>
       </div>
+      <Balance />
     </div>
   );
 };
