@@ -15,6 +15,9 @@
     "@ethersproject/contracts": "5.6.2",
     "@ethersproject/hash": "5.6.1",
     "@ethersproject/providers": "5.6.8",
+    "@mui/material": "^5.2.6",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "@mui/styled-engine-sc": "^5.1.0",
     "@netlify/functions": "^1.0.0",
     "@toruslabs/torus-embed": "1.27.0",
     "@walletconnect/web3-provider": "1.8.0-rc.0",
@@ -31,7 +34,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts-ts": "4.0.8",
-    "styled-components": "4.4.1",
+    "styled-components": "^5.3.3",
     "web3": "3.0.0-rc.5",
     "web3modal": "1.9.8"
   },
@@ -46,6 +49,10 @@
     "@types/web3": "^1.2.2",
     "typescript": "^4.7.4"
   },
+  "resolutions": {
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
+  },
+  "packageManager": "yarn@3.1.1",
   "browserslist": [
     ">0.2%",
     "not dead",
