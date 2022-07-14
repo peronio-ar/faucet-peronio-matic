@@ -1,6 +1,10 @@
 import * as React from "react";
 import { ITokenAmount } from "src/helpers/types";
 import styled from "styled-components";
+
+import CardHeader from "@mui/material/CardHeader";
+import { CardContent, Typography, Paper } from "@mui/material";
+
 // import styled from "styled-components";
 // import { colors, fonts, shadows, transitions } from "../styles";
 
@@ -42,6 +46,8 @@ const tokens: ITokenAmount[] = [
 
 const SToken = styled.div`
   display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
 `;
 
 const SSymbol = styled.div``;
@@ -55,17 +61,22 @@ const TokenAmount = (props: ITokenAmount) => (
   </SToken>
 );
 
+const Container = styled(Paper)`
+  padding: 1em;
+  border-radius: 0.5em;
+`;
+
 const Balance = (props: IBalanceProps) => (
-  <div>
-    <div>
-      <h2>Fondos Actuales:</h2>
-    </div>
-    <div>
-      {tokens.map((v) => (
-        <TokenAmount symbol={v.symbol} amount={v.amount} />
-      ))}
-    </div>
-  </div>
+  <Container elevation={16}>
+    <CardHeader title='Fondos Actuales' />
+    <CardContent>
+      <Typography variant='body2' color='text.secondary'>
+        {tokens.map((v) => (
+          <TokenAmount symbol={v.symbol} amount={v.amount} />
+        ))}
+      </Typography>
+    </CardContent>
+  </Container>
 );
 
 Balance.defaultProps = {
