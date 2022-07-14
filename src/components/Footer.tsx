@@ -1,6 +1,7 @@
 import * as React from "react";
+import Box from "@mui/material/Box";
 
-const Footer = (props: any) => <div>Footer</div>;
+const Footer = (props: any) => <Box>Footer</Box>;
 
 Footer.defaultProps = {
   //   fetching: false,
