@@ -119,7 +119,7 @@ const ConnectButton = (props: IConnectButtonProps) => (
     <SConnectButton type='button' {...props}>
       <SHoverLayer />
       <SIcon />
-      {"Connect"}
+      {"Conectar Billetera"}
     </SConnectButton>
   </SConnectButtonContainer>
 );
