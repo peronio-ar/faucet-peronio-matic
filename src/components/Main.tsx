@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Web3Provider } from "@ethersproject/providers";
-import Balance from "./widgets/Balance";
+import Claimer from "./widgets/Claimer";
 
 // import styled from "styled-components";
 
@@ -13,11 +13,11 @@ interface IMainProps {
 const Main = (props: IMainProps) => {
   return (
     <div>
-      <h1>Peronio</h1>
+      <h1>La Crypta</h1>
       <div>
         <div>Tu dirección: {props.account}</div>
       </div>
-      <Balance />
+      <Claimer account={props.account} />
     </div>
   );
 };
