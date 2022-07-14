@@ -12,9 +12,10 @@ import ConnectButton from "./components/ConnectButton";
 
 import Main from "./components/Main";
 
+import Offline from "./components/widgets/Offline";
+
 import { Web3Provider } from "@ethersproject/providers";
 import { getChainData } from "./helpers/utilities";
-import Footer from "./components/Footer";
 
 // import { ChakraProvider } from "@chakra-ui/react";
 
@@ -42,7 +43,7 @@ const SContainer = styled.div`
 `;
 
 const SLanding = styled(Column)`
-  height: 600px;
+  
 `;
 
 // @ts-ignore
@@ -217,14 +218,15 @@ class App extends React.Component<any, any> {
             ) : (
               <SLanding center>
                 {!this.state.connected ? (
-                  <ConnectButton onClick={this.onConnect} />
+                  <Offline>
+                    <ConnectButton onClick={this.onConnect} />
+                  </Offline>
                 ) : (
                   <Main account={address} library={library} />
                 )}
               </SLanding>
             )}
           </SContent>
-          <Footer />
         </Column>
       </SLayout>
     );
