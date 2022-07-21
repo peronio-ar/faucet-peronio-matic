@@ -1,7 +1,9 @@
+// tslint:disable:no-console
 import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Stack, Paper, TextField, Button } from "@mui/material";
+import AlreadyClaimed from "./AlreadyClaimed";
 
 // import styled from "styled-components";
 // import { colors, fonts, shadows, transitions } from "../styles";
@@ -27,28 +29,51 @@ const Container = styled(Paper)`
 
 const Claimer = (props: any) => {
   const [word, setWord] = useState("");
+  const [claimed, setClaimed] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleWordChange = (e: any) => {
     setWord(e.target.value);
   };
 
   const handleClaim = () => {
-    alert(props.account);
-    alert(word);
+    setLoading(true);
+
+    console.info("Address", props.account);
+    console.info("Word", word);
+
+    setTimeout(() => {
+      setLoading(false);
+      setClaimed(true);
+    }, 1000);
   };
+
+  const Loading = () => <>Cargando...</>;
+
+  // const NotClaimed = () => (
+
+  // );
 
   return (
     <Container>
       <Stack spacing={2}>
-        <div>Escribí la palabra secreta que recibiste al entrar</div>
-        <TextField
-          label='Palabra'
-          variant='outlined'
-          value={word}
-          onChange={handleWordChange}
-        />
-        <Button onClick={handleClaim} variant='contained'>
-          Recibir Peronios
-        </Button>
+        {claimed ? (
+          <AlreadyClaimed />
+        ) : loading ? (
+          <Loading />
+        ) : (
+          <>
+            <div>Escribí la palabra secreta que recibiste al entrar</div>
+            <TextField
+              label='Palabra'
+              variant='outlined'
+              value={word}
+              onChange={handleWordChange}
+            />
+            <Button onClick={handleClaim} variant='contained'>
+              Recibir Peronios
+            </Button>
+          </>
+        )}
       </Stack>
     </Container>
   );
