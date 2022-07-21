@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "faucet-peronio-matic",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -29,6 +29,7 @@
     "ethereumjs-util": "^6.1.0",
     "ethers": "6.0.0-beta.9",
     "fortmatic": "^0.8.2",
+    "netlify-cli": "^10.10.2",
     "noty": "3.2.0-beta",
     "prop-types": "15.8.1",
     "react": "18.2.0",
