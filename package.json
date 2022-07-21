@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts-ts start",
+    "dev": "netlify dev",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
