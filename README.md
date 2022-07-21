@@ -9,10 +9,6 @@
 
 ```bash
 yarn
-
-# OR
-
-yarn
 ```
 
 2. Copy .env example
