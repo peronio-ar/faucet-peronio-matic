@@ -21,7 +21,7 @@ yarn
 cp .env.example .env
 ```
 
-Set REACT_APP_CLAIM_CONTRACT with your Claim Contract Address
+Set REACT_APP_FAUCET_CONTRACT with your Faucet Contract Address
 
 3. Start the app
 
