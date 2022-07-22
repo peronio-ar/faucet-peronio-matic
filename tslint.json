@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "prefer-for-of": false,
     "no-shadowed-variable": false,
@@ -19,6 +15,7 @@
       "config/**/*.js",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js",
+      "functions/**/*.ts",
       "*.json",
       "**/*.json"
     ]

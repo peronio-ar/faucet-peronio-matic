@@ -30,6 +30,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "functions",
     "src/setupTests.ts"
   ]
 }
