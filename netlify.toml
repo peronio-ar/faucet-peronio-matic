@@ -1,5 +1,9 @@
 [build]
+  base = "/"
   command = "yarn build"
+  functions = "functions"
+  publish = "./build"
+[dev]
   functions = "functions"
   publish = "./build"
 [[redirects]]
