@@ -11,8 +11,9 @@ const handler: Handler = async (event) => {
   }
 
   console.dir(event);
-  const { word, address } = JSON.parse(event.body ?? "");
+  let { word, address } = JSON.parse(event.body ?? "");
 
+  word = word.toLowerCase().trim();
   console.info("word", word);
   console.info("address", address);
   if (!(await isClaimable(word))) {
