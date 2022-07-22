@@ -84,9 +84,9 @@ const wordsList = [
   "YPSILANTI",
 ];
 
-const handler: Handler = async (event, context) => {
+const handler: Handler = async () => {
   await wordsList.forEach((word) => {
-    addWord(word.toLowerCase());
+    addWord(word.toLowerCase().trim());
   });
 
   const message = "Added words";
