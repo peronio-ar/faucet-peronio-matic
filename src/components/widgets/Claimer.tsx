@@ -1,6 +1,7 @@
 // tslint:disable:no-console
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import { Stack, Paper, TextField, Button } from "@mui/material";
 import AlreadyClaimed from "./AlreadyClaimed";
@@ -38,13 +39,17 @@ const Claimer = (props: any) => {
   const handleClaim = () => {
     setLoading(true);
 
-    console.info("Address", props.account);
-    console.info("Word", word);
-
-    setTimeout(() => {
-      setLoading(false);
-      setClaimed(true);
-    }, 1000);
+    axios
+      .post("api/claim", {
+        word,
+        address: props.account,
+      })
+      .then((response) => {
+        setLoading(false);
+        setClaimed(true);
+        console.info("response:");
+        console.dir(response);
+      });
   };
 
   const Loading = () => <>Cargando...</>;
