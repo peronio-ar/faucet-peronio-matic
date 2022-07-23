@@ -8,7 +8,7 @@ const handler: Handler = async (event) => {
     log("error", { error: 405 });
     return {
       statusCode: 405,
-      body: JSON.stringify("Must be POST"),
+      body: JSON.stringify({ success: false, message: "Must be POST" }),
     };
   }
 
@@ -24,7 +24,7 @@ const handler: Handler = async (event) => {
     console.info("Not claimable", address);
     return {
       statusCode: 403,
-      body: JSON.stringify({ message: "No claimable" }),
+      body: JSON.stringify({ success: false, message: "No claimable" }),
     };
   } else {
     log("set_claimed", { word, address });
@@ -41,8 +41,12 @@ const handler: Handler = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        tx,
-        address,
+        success: true,
+        data: {
+          tx,
+          address,
+        },
+        message: "Enviados 1000 PE!",
       }),
     };
   }
