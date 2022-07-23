@@ -11,23 +11,28 @@ const Container = styled(Paper)`
   border-radius: 0.5em;
 `;
 
-interface IClaimResponseProps {
-  data: object;
-}
+// interface IResponseData {
+//   success: boolean;
+//   message: string;
+//   tx?: string;
+//   address?: string;
+// }
 
-const ClaimResponse = (props: IClaimResponseProps) => {
+// interface IClaimResponseProps {
+//   data?: IResponseData;
+//   status?: string;
+// }
+
+const ClaimResponse = (props: any) => {
   return (
     <Container>
       <Stack spacing={2}>
+        {}
         <div>Reclamadooo</div>
-        <div>{JSON.stringify(props.data)}</div>
+        <div>{JSON.stringify(props)}</div>
       </Stack>
     </Container>
   );
-};
-
-ClaimResponse.defaultProps = {
-  data: {},
 };
 
 export default ClaimResponse;

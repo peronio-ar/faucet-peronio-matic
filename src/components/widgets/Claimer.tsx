@@ -4,7 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 import { Stack, Paper } from "@mui/material";
-import ClaimResponse from "./ClaimResponse";
+import ClaimResponse, { IClaimResponseProps } from "./ClaimResponse";
 import Button from "../Button";
 
 // import styled from "styled-components";
@@ -26,7 +26,7 @@ const Claimer = (props: any) => {
   const [word, setWord] = useState("");
   const [claimed, setClaimed] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState<IClaimResponseProps>();
   const handleWordChange = (e: any) => {
     setWord(e.target.value);
   };
@@ -39,12 +39,23 @@ const Claimer = (props: any) => {
         word,
         address: props.account,
       })
-      .then((response) => {
+      .then((response: IClaimResponseProps) => {
+        setResponse({
+          status: 200,
+          response,
+        });
+        console.info("response:");
+        console.dir({ response });
+      })
+      .catch((e: IClaimResponseProps) => {
+        console.info("Encontró un error");
+        console.info("error", e);
+        setResponse(e.response);
+        console.info("response:");
+      })
+      .finally(() => {
         setLoading(false);
         setClaimed(true);
-        setResponse(response);
-        console.info("response:");
-        console.dir(response);
       });
   };
 
@@ -58,7 +69,7 @@ const Claimer = (props: any) => {
     <Container>
       <Stack spacing={2}>
         {claimed ? (
-          <ClaimResponse data={response} />
+          <ClaimResponse response={response} />
         ) : loading ? (
           <Loading />
         ) : (
