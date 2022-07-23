@@ -182,6 +182,12 @@ class App extends React.Component<any, any> {
               "https://polygon-mainnet.infura.io/v3/" +
               process.env.REACT_APP_INFURA_ID,
           },
+          qrcodeModalOptions: {
+            mobileLinks: [
+              "alphawallet",
+              // "metamask",
+            ],
+          },
         },
       },
     };
