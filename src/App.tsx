@@ -8,7 +8,6 @@ import Column from "./components/Column";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
-import ConnectButton from "./components/ConnectButton";
 
 import Main from "./components/Main";
 
@@ -16,6 +15,7 @@ import Offline from "./components/widgets/Offline";
 
 import { Web3Provider } from "@ethersproject/providers";
 import { getChainData } from "./helpers/utilities";
+import Button from "./components/Button";
 
 // import { ChakraProvider } from "@chakra-ui/react";
 
@@ -24,6 +24,8 @@ const SLayout = styled.div`
   width: 100%;
   min-height: 100vh;
   text-align: center;
+  background: black;
+  color: white;
 `;
 
 const SContent = styled(Wrapper)`
@@ -42,9 +44,7 @@ const SContainer = styled.div`
   word-break: break-word;
 `;
 
-const SLanding = styled(Column)`
-  
-`;
+const SLanding = styled(Column)``;
 
 // @ts-ignore
 const SBalances = styled(SLanding)`
@@ -223,9 +223,10 @@ class App extends React.Component<any, any> {
               </Column>
             ) : (
               <SLanding center>
+                <h1>La Crypta</h1>
                 {!this.state.connected ? (
                   <Offline>
-                    <ConnectButton onClick={this.onConnect} />
+                    <Button onClick={this.onConnect}>Conectar Billetera</Button>
                   </Offline>
                 ) : (
                   <Main account={address} library={library} />
