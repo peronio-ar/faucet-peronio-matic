@@ -13,10 +13,6 @@ interface IMainProps {
 const Main = (props: IMainProps) => {
   return (
     <div>
-      <h1>La Crypta</h1>
-      <div>
-        <div>Tu dirección: {props.account}</div>
-      </div>
       <Claimer account={props.account} />
     </div>
   );
