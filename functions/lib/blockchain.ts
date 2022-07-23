@@ -100,9 +100,7 @@ async function sendSignTransaction(rawTrans: any) {
     console.info("TX:", tx);
 
     // after signing send the transaction
-
-    return "0x32423423424234243";
-    // return await sendSigned(tx);
+    return await sendSigned(tx);
   } else {
     throw new console.error("Encoded raw transaction was not given.");
   }
