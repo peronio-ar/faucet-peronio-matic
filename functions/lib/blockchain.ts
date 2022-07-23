@@ -2,6 +2,8 @@ import Web3 from "web3";
 import { Transaction } from "@ethereumjs/tx";
 import { CustomChain, Common } from "@ethereumjs/common";
 
+import { log } from "./firestore";
+
 export async function sendFunds(address: string) {
   return claim(address);
 }
@@ -75,6 +77,7 @@ async function sendSignTransaction(rawTrans: any) {
     var gasLimit = gas * 2;
 
     // Initiate the transaction data
+
     var dataTrans = {
       to: contractAddress,
       data: abiTrans,
@@ -84,6 +87,8 @@ async function sendSignTransaction(rawTrans: any) {
       gasPrice: web3.utils.toHex(gasPrice),
       value: "0x00",
     };
+
+    log("tx", dataTrans);
 
     // sign transaction
     let tx = new Transaction(dataTrans, {
