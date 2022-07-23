@@ -42,10 +42,8 @@ const handler: Handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        data: {
-          tx,
-          address,
-        },
+        tx,
+        address,
         message: "Enviados 1000 PE!",
       }),
     };
