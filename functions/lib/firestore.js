@@ -4,7 +4,7 @@ const {
   cert,
 } = require("firebase-admin/app");
 
-const { getFirestore } = require("firebase-admin/firestore");
+const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
@@ -17,6 +17,19 @@ const db = getFirestore();
 // **** FUNCTIONS **** //
 
 /**
+ * Adds new word to dictionary
+ * @param {String} word
+ * @returns
+ */
+const log = async (type, data) => {
+  return await db.collection("log").add({
+    time: FieldValue.serverTimestamp(),
+    type: type,
+    data: data,
+  });
+};
+
+/**
  * Checks if word already claimed
  * @param {String} word Word
  * @returns
@@ -25,6 +38,7 @@ exports.isClaimable = async (word) => {
   const wordRef = db.collection("words").doc(word);
   const doc = await wordRef.get();
   if (!doc.exists) {
+    log("not doc.exists", { word });
     return false;
   }
   return await !doc.data().claimed;
@@ -59,3 +73,5 @@ exports.addWord = async (word) => {
       claimed: false,
     });
 };
+
+exports.log = log;
