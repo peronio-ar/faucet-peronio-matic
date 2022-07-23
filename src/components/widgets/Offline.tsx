@@ -1,35 +1,30 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { CardHeader, CardContent, Typography, Paper, Stack } from "@mui/material";
+import { CardHeader, CardContent, Paper } from "@mui/material";
 
 interface IOfflineProps {
-    children: React.ReactNode;
-  }
+  children: React.ReactNode;
+}
 
 const Container = styled(Paper)`
   padding: 1em;
   border-radius: 0.5em;
 `;
 
+const Center = styled.div`
+  text-align: center;
+`;
+
 const Offline = (props: IOfflineProps) => (
   <Container elevation={1}>
-    <CardHeader title='Seguí estos pasos' />
+    <CardHeader title='Conectate y volvé al explorador' />
     <CardContent>
-      <Typography variant='body2' color='text.secondary'>
-      <Stack spacing={2}>
-        <Paper>Conectar Billetera</Paper>
-        <Paper>Seleccionar App</Paper>
-        <Paper>Volver a esta página</Paper>
-      </Stack>
-      </Typography>
-      <div>{props.children}</div>
+      <Center>{props.children}</Center>
     </CardContent>
   </Container>
 );
 
-Offline.defaultProps = {
-  
-};
+Offline.defaultProps = {};
 
 export default Offline;
