@@ -3,25 +3,19 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import { Stack, Paper, TextField, Button } from "@mui/material";
-import AlreadyClaimed from "./AlreadyClaimed";
+import { Stack, Paper } from "@mui/material";
+import ClaimResponse from "./ClaimResponse";
+import Button from "../Button";
 
 // import styled from "styled-components";
 // import { colors, fonts, shadows, transitions } from "../styles";
 
-// const SIcon = styled.div`
-//   position: absolute;
-//   height: 15px;
-//   width: 15px;
-//   margin: 0 8px;
-//   top: calc((100% - 15px) / 2);
-// `;
-
-// const SToken = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 1.5em;
-// `;
+const TextField = styled.input`
+  height: 50px;
+  font-size: 20px !important;
+  text-transform: uppercase;
+  padding: 7px;
+`;
 
 const Container = styled(Paper)`
   padding: 1em;
@@ -32,6 +26,7 @@ const Claimer = (props: any) => {
   const [word, setWord] = useState("");
   const [claimed, setClaimed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState({});
   const handleWordChange = (e: any) => {
     setWord(e.target.value);
   };
@@ -47,6 +42,7 @@ const Claimer = (props: any) => {
       .then((response) => {
         setLoading(false);
         setClaimed(true);
+        setResponse(response);
         console.info("response:");
         console.dir(response);
       });
@@ -62,21 +58,14 @@ const Claimer = (props: any) => {
     <Container>
       <Stack spacing={2}>
         {claimed ? (
-          <AlreadyClaimed />
+          <ClaimResponse data={response} />
         ) : loading ? (
           <Loading />
         ) : (
           <>
             <div>Escribí la palabra secreta que recibiste al entrar</div>
-            <TextField
-              label='Palabra'
-              variant='outlined'
-              value={word}
-              onChange={handleWordChange}
-            />
-            <Button onClick={handleClaim} variant='contained'>
-              Recibir Peronios
-            </Button>
+            <TextField type='text' value={word} onChange={handleWordChange} />
+            <Button onClick={handleClaim}>Recibir Peronios</Button>
           </>
         )}
       </Stack>
