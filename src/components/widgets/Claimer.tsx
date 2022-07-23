@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import { Stack, Paper } from "@mui/material";
-import ClaimResponse, { IClaimResponseProps } from "./ClaimResponse";
+import { Stack, Paper, LinearProgress } from "@mui/material";
+import ClaimResponse from "./ClaimResponse";
 import Button from "../Button";
 
 // import styled from "styled-components";
@@ -26,7 +26,7 @@ const Claimer = (props: any) => {
   const [word, setWord] = useState("");
   const [claimed, setClaimed] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<IClaimResponseProps>();
+  const [response, setResponse] = useState<any>();
   const handleWordChange = (e: any) => {
     setWord(e.target.value);
   };
@@ -39,7 +39,7 @@ const Claimer = (props: any) => {
         word,
         address: props.account,
       })
-      .then((response: IClaimResponseProps) => {
+      .then((response) => {
         setResponse({
           status: 200,
           response,
@@ -47,7 +47,7 @@ const Claimer = (props: any) => {
         console.info("response:");
         console.dir({ response });
       })
-      .catch((e: IClaimResponseProps) => {
+      .catch((e) => {
         console.info("Encontró un error");
         console.info("error", e);
         setResponse(e.response);
@@ -59,7 +59,12 @@ const Claimer = (props: any) => {
       });
   };
 
-  const Loading = () => <>Cargando...</>;
+  const Loading = () => (
+    <>
+      <div>Cargando...</div>
+      <LinearProgress color='success' />
+    </>
+  );
 
   // const NotClaimed = () => (
 
